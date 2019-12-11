@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'touchid_check' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for touchid_check
+
+  target 'touchid_check-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'touchid_checkTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
