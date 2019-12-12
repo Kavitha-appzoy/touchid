@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { NavigationActions, StackActions } from 'react-navigation';
 import {
-  AlertIOS,
   StyleSheet,
   Text,
   TouchableHighlight,
@@ -8,14 +8,18 @@ import {
 } from 'react-native';
 
 
-class WelcomeScreen extends Component {
-
+class RegisterScreen extends Component {
+  
   render() {
+    const resetAction = StackActions.reset({
+        index: 0,
+        actions: [NavigationActions.navigate({ routeName: 'HomeScreen' })],
+    });
     return (
       <View style={styles.container}>
         <TouchableHighlight
           style={styles.btn}
-          onPress={() => this.props.navigation.navigate('RegisterScreen')}
+          onPress={() => this.props.navigation.dispatch(resetAction) }
           underlayColor="#0380BE"
           activeOpacity={1}
         >
@@ -24,19 +28,6 @@ class WelcomeScreen extends Component {
             fontWeight: '600'
           }}>
             {`Register`}
-          </Text>
-        </TouchableHighlight>
-        <TouchableHighlight
-          style={styles.btn}
-          onPress={() => this.props.navigation.navigate('LoginScreen')}
-          underlayColor="#0380BE"
-          activeOpacity={1}
-        >
-          <Text style={{
-            color: '#fff',
-            fontWeight: '600'
-          }}>
-            {`Login`}
           </Text>
         </TouchableHighlight>
       </View>
@@ -70,4 +61,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default WelcomeScreen;
+export default RegisterScreen;
