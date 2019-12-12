@@ -28,25 +28,20 @@ class LoginScreen extends Component {
   }
 
   componentDidMount() {
-    console.log("component did mount fn called")
     TouchID.isSupported()
     .then(biometryType => {
       this.setState({ isDeviceSupportTouchId:biometryType });
       AsyncStorage.getItem("user").then((value) => {
-        console.log("asyn have values ",value)
         if(value != null){
           this.setState({ fingerPrintCheck:true });
         }
-       
-    }).done();
+        }).done();
     })
 
   }
   
   
   render() {
-   
-
     return (
       <View style={styles.container}>
         <Text style={{
@@ -61,10 +56,7 @@ class LoginScreen extends Component {
           underlayColor="#0380BE"
           activeOpacity={1}
         >
-          <Text style={{
-            color: '#fff',
-            fontWeight: '600'
-          }}>
+          <Text style={styles.txt}>
             {`Login`}
           </Text>
         </TouchableHighlight>
@@ -74,10 +66,7 @@ class LoginScreen extends Component {
           underlayColor="#0380BE"
           activeOpacity={1}
         >
-          <Text style={{
-            color: '#fff',
-            fontWeight: '600'
-          }}>
+          <Text style={styles.txt}>
             {`Use FingerPrint`}
           </Text>
         </TouchableHighlight> : null }
@@ -85,8 +74,7 @@ class LoginScreen extends Component {
     );
   }
   submit(){
-    
-      const resetAction = StackActions.reset({
+     const resetAction = StackActions.reset({
        index: 0,
        actions: [NavigationActions.navigate({ routeName: 'HomeScreen' })],
       });
@@ -127,6 +115,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF'
   },
   btn: {
+    width: 150,
     borderRadius: 3,
     marginTop: 20,
     paddingTop: 15,
@@ -134,7 +123,14 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     backgroundColor: '#0391D7'
-  }
+  },
+  txt:
+    {
+      textAlign:'center',
+      color: '#fff',
+      fontWeight: '600'
+    }
+  
 });
 
 export default LoginScreen;

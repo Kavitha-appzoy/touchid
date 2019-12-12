@@ -18,9 +18,14 @@ class RegisterScreen extends Component {
     
     return (
       <View style={styles.container}>
+        <Text style={{
+            color: '#566',
+            fontWeight: '600'
+          }}>
+            {`REGISTER SCREEN`}
+          </Text>
         <TouchableHighlight
           style={styles.btn}
-          //onPress={() => this.props.navigation.dispatch(resetAction) }
           onPress={this.clickHandler}
           underlayColor="#0380BE"
           activeOpacity={1}

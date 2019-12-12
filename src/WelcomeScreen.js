@@ -18,9 +18,8 @@ class WelcomeScreen extends Component {
     return (
       <View style={styles.container}>
         <Text style={{
-            color: '#566',
-            fontWeight: '600'
-          }}>
+             color: '#876',
+              fontWeight: '600'}}>
             {`WELCOME SCREEN`}
           </Text>
         <TouchableHighlight
@@ -29,10 +28,7 @@ class WelcomeScreen extends Component {
           underlayColor="#0380BE"
           activeOpacity={1}
         >
-          <Text style={{
-            color: '#fff',
-            fontWeight: '600'
-          }}>
+          <Text style={styles.txtStyle}>
             {`Register`}
           </Text>
         </TouchableHighlight>
@@ -42,10 +38,7 @@ class WelcomeScreen extends Component {
           underlayColor="#0380BE"
           activeOpacity={1}
         >
-          <Text style={{
-            color: '#fff',
-            fontWeight: '600'
-          }}>
+          <Text style={styles.txtStyle}>
             {`Login`}
           </Text>
         </TouchableHighlight>
@@ -68,6 +61,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF'
   },
   btn: {
+    width: 150,
     borderRadius: 3,
     marginTop: 20,
     paddingTop: 15,
@@ -75,6 +69,11 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     backgroundColor: '#0391D7'
+  },
+  txtStyle:{
+    color: '#fff',
+    fontWeight: '600',
+    textAlign: 'center'
   }
 });
 

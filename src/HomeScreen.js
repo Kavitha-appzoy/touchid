@@ -17,6 +17,12 @@ class HomeScreen extends Component {
     
     return (
       <View style={styles.container}>
+      <Text style={{
+            color: '#566',
+            fontWeight: '600'
+          }}>
+            {`DASHBOARD`}
+          </Text>
         <TouchableHighlight
           style={styles.btn}
           onPress={this.logout}
@@ -39,8 +45,8 @@ class HomeScreen extends Component {
   const resetAction = StackActions.reset({
     index: 0,
     actions: [NavigationActions.navigate({ routeName: 'LoginScreen' })],
-});  
-this.props.navigation.dispatch(resetAction)
+  });  
+   this.props.navigation.dispatch(resetAction)
 }
  } 
 
