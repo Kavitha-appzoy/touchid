@@ -1,3 +1,25 @@
-PODFILE CHECKSUM: 4d7f21ccb0bba9c20ff6ba7f95300a1af2b564f2
+PODS:
+  - React (0.11.0):
+    - React/Core (= 0.11.0)
+  - React/Core (0.11.0)
+  - RNGestureHandler (1.1.0):
+    - React
+
+DEPENDENCIES:
+  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+
+SPEC REPOS:
+  trunk:
+    - React
+
+EXTERNAL SOURCES:
+  RNGestureHandler:
+    :path: "../node_modules/react-native-gesture-handler"
+
+SPEC CHECKSUMS:
+  React: ab1a2e21deb34965c38328d5ec40cc7d12c6050a
+  RNGestureHandler: b65d391f4f570178d657b99a16ec99d09b8656b0
+
+PODFILE CHECKSUM: 8de9687ee1411f0e722b5f1ecf89784dd383cd51
 
 COCOAPODS: 1.8.4

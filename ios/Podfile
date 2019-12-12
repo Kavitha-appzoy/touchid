@@ -10,6 +10,9 @@ target 'touchid_check' do
   target 'touchid_check-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
+
+    pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
   end
 
   target 'touchid_checkTests' do
