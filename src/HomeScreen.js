@@ -6,19 +6,20 @@ import {
   TouchableHighlight,
   View,
 } from 'react-native';
-
+import AsyncStorage from "@react-native-community/async-storage";
 
 class HomeScreen extends Component {
+  constructor(props){
+    super(props)
+    this.logout=this.logout.bind(this);
+  }
   render() {
-    const resetAction = StackActions.reset({
-        index: 0,
-        actions: [NavigationActions.navigate({ routeName: 'LoginScreen' })],
-    });  
+    
     return (
       <View style={styles.container}>
         <TouchableHighlight
           style={styles.btn}
-          onPress={() => this.props.navigation.dispatch(resetAction) }
+          onPress={this.logout}
           underlayColor="#0380BE"
           activeOpacity={1}
         >
@@ -32,6 +33,15 @@ class HomeScreen extends Component {
       </View>
     );
   }
+  logout()
+{
+  AsyncStorage.removeItem('user');
+  const resetAction = StackActions.reset({
+    index: 0,
+    actions: [NavigationActions.navigate({ routeName: 'LoginScreen' })],
+});  
+this.props.navigation.dispatch(resetAction)
+}
  } 
 
 
@@ -42,13 +52,14 @@ const styles = StyleSheet.create({
   container: {
 
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     alignItems: 'center',
     backgroundColor: '#F5FCFF'
   },
   btn: {
     borderRadius: 3,
     marginTop: 200,
+    marginBottom: 30,
     paddingTop: 15,
     paddingBottom: 15,
     paddingLeft: 15,

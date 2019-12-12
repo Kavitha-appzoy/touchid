@@ -8,7 +8,9 @@ import {
   View,
 } from 'react-native';
 import { NavigationActions, StackActions } from 'react-navigation';
+import AsyncStorage from "@react-native-community/async-storage";
 import TouchID from "react-native-touch-id";
+
 const resetAction = StackActions.reset({
   index: 0,
   actions: [NavigationActions.navigate({ routeName: 'HomeScreen' })],
@@ -17,28 +19,45 @@ class LoginScreen extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      biometryType: null
+      isDeviceSupportTouchId: null,
+      fingerPrintCheck: null
+    
     };
     this.clickHandler=this.clickHandler.bind(this);
-    
+    this.submit=this.submit.bind(this);
   }
 
   componentDidMount() {
-    
+    console.log("component did mount fn called")
     TouchID.isSupported()
     .then(biometryType => {
-      this.setState({ biometryType });
+      this.setState({ isDeviceSupportTouchId:biometryType });
+      AsyncStorage.getItem("user").then((value) => {
+        console.log("asyn have values ",value)
+        if(value != null){
+          this.setState({ fingerPrintCheck:true });
+        }
+       
+    }).done();
     })
-  }
 
+  }
+  
+  
   render() {
    
 
     return (
       <View style={styles.container}>
+        <Text style={{
+            color: '#566',
+            fontWeight: '600'
+          }}>
+            {`LOGIN SCREEN`}
+          </Text>
          <TouchableHighlight
           style={styles.btn}
-          onPress={()=>this.props.navigation.dispatch(resetAction)}
+          onPress={this.submit}
           underlayColor="#0380BE"
           activeOpacity={1}
         >
@@ -49,7 +68,7 @@ class LoginScreen extends Component {
             {`Login`}
           </Text>
         </TouchableHighlight>
-        <TouchableHighlight
+        {(this.state.isDeviceSupportTouchId  && this.state.fingerPrintCheck) ? <TouchableHighlight
           style={styles.btn}
           onPress={this.clickHandler}
           underlayColor="#0380BE"
@@ -61,30 +80,41 @@ class LoginScreen extends Component {
           }}>
             {`Use FingerPrint`}
           </Text>
-        </TouchableHighlight>
+        </TouchableHighlight> : null }
       </View>
     );
   }
-
+  submit(){
+    
+      const resetAction = StackActions.reset({
+       index: 0,
+       actions: [NavigationActions.navigate({ routeName: 'HomeScreen' })],
+      });
+     AsyncStorage.setItem('user', "true");
+     this.props.navigation.dispatch(resetAction)
+     
+  }
   clickHandler() {
     TouchID.isSupported()
       .then(authenticate=>{
 
         TouchID.authenticate()
-                     .then(success => {
+                .then(success => {
             
-        
+                      //Authentication Success
                      this.props.navigation.dispatch(resetAction); 
                        // this.props.navigation.navigate('HomeScreen'); 
      
                        })
                         .catch(error => {
+                          //Authentication failed
                         console.log(error)
                         AlertIOS.alert(error.message);
            });
 
             })      .catch(error => {
-                           AlertIOS.alert('TouchID not supported');
+                          // device not supported fingerPrint
+                      AlertIOS.alert('TouchID not supported');
             });
               }
           } 
@@ -99,7 +129,7 @@ const styles = StyleSheet.create({
   },
   btn: {
     borderRadius: 3,
-    marginTop: 200,
+    marginTop: 20,
     paddingTop: 15,
     paddingBottom: 15,
     paddingLeft: 15,

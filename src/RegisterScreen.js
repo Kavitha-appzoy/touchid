@@ -6,20 +6,21 @@ import {
   TouchableHighlight,
   View,
 } from 'react-native';
-
+import AsyncStorage from "@react-native-community/async-storage";
 
 class RegisterScreen extends Component {
-  
+  constructor(props){
+    super(props);
+    this.clickHandler = this.clickHandler.bind(this);
+  }
   render() {
-    const resetAction = StackActions.reset({
-        index: 0,
-        actions: [NavigationActions.navigate({ routeName: 'HomeScreen' })],
-    });
+    
     return (
       <View style={styles.container}>
         <TouchableHighlight
           style={styles.btn}
-          onPress={() => this.props.navigation.dispatch(resetAction) }
+          //onPress={() => this.props.navigation.dispatch(resetAction) }
+          onPress={this.clickHandler}
           underlayColor="#0380BE"
           activeOpacity={1}
         >
@@ -33,14 +34,16 @@ class RegisterScreen extends Component {
       </View>
     );
   }
-
-//   clickHandler() {
+  clickHandler() {
+     const resetAction = StackActions.reset({
+      index: 0,
+      actions: [NavigationActions.navigate({ routeName: 'HomeScreen' })],
+     });
+    AsyncStorage.setItem('user', "true");
+    this.props.navigation.dispatch(resetAction)
     
-//   }
+  }
  } 
-
-
-
 
 
 const styles = StyleSheet.create({

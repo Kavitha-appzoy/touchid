@@ -13,6 +13,12 @@ class WelcomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Text style={{
+            color: '#566',
+            fontWeight: '600'
+          }}>
+            {`WELCOME SCREEN`}
+          </Text>
         <TouchableHighlight
           style={styles.btn}
           onPress={() => this.props.navigation.navigate('RegisterScreen')}
@@ -43,9 +49,7 @@ class WelcomeScreen extends Component {
     );
   }
 
-//   clickHandler() {
-    
-//   }
+
  } 
 
 
@@ -61,7 +65,7 @@ const styles = StyleSheet.create({
   },
   btn: {
     borderRadius: 3,
-    marginTop: 200,
+    marginTop: 20,
     paddingTop: 15,
     paddingBottom: 15,
     paddingLeft: 15,

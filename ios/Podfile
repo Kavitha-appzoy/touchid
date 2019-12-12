@@ -13,6 +13,8 @@ target 'touchid_check' do
 
     pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
+    pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
+
   end
 
   target 'touchid_checkTests' do
