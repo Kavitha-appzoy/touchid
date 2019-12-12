@@ -6,20 +6,18 @@ import AsyncStorage from "@react-native-community/async-storage";
       console.log("Data saved successfully");
       // Rest of your code
     } catch (error) {
-      console.log("Error while storing the token");
+      console.log("Error");
     }
   }
   
-  
-  /* Splash Screen  */ 
   const retrieveUserLoginState = async() =>  {
     try {
-      const token = await AsyncStorage.getItem('userState');
-      if (token !== null) {
-        console.log("Session token",token );
-        return token;
+      const userState = await AsyncStorage.getItem('userState');
+      if (userState !== null) {
+        console.log("Session token",userState );
+        return userState;
       }
      } catch (error) {
-       console.log("Error while storing the token");
+       console.log("Error");
      }
   }

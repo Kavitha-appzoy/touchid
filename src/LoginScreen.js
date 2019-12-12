@@ -103,7 +103,6 @@ class LoginScreen extends Component {
             
                       //Authentication Success
                      this.props.navigation.dispatch(resetAction); 
-                       // this.props.navigation.navigate('HomeScreen'); 
      
                        })
                         .catch(error => {

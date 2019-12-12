@@ -13,6 +13,7 @@ class RegisterScreen extends Component {
     super(props);
     this.clickHandler = this.clickHandler.bind(this);
   }
+
   render() {
     
     return (

@@ -6,10 +6,14 @@ import {
   TouchableHighlight,
   View,
 } from 'react-native';
-
+import {encryptPassword,decryptPassword} from './PasswordOperation'
 
 class WelcomeScreen extends Component {
-
+  componentDidMount(){
+   let encrypted =  encryptPassword("Kavitha")
+   let userPassword = decryptPassword(encrypted)
+    console.log("the userPassword is ",userPassword)
+  }
   render() {
     return (
       <View style={styles.container}>
