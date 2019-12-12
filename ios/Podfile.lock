@@ -4,12 +4,9 @@ PODS:
   - React/Core (0.11.0)
   - RNCAsyncStorage (1.7.0):
     - React
-  - RNGestureHandler (1.1.0):
-    - React
 
 DEPENDENCIES:
   - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
-  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
 
 SPEC REPOS:
   trunk:
@@ -18,14 +15,11 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-community/async-storage"
-  RNGestureHandler:
-    :path: "../node_modules/react-native-gesture-handler"
 
 SPEC CHECKSUMS:
   React: ab1a2e21deb34965c38328d5ec40cc7d12c6050a
   RNCAsyncStorage: e9f3eb4fbd5d0d1713051ffbd60968110172d6e9
-  RNGestureHandler: b65d391f4f570178d657b99a16ec99d09b8656b0
 
-PODFILE CHECKSUM: a4c04d0b82f91da641a871aa4f86ea6591eaa7c5
+PODFILE CHECKSUM: 29f1dd23705710c5a98bcf644a057feb33f59e49
 
 COCOAPODS: 1.8.4

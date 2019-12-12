@@ -14,7 +14,7 @@
     "react-native-gesture-handler": "1.1.0",
     "react-native-rsa": "0.0.3",
     "react-native-touch-id": "^4.4.1",
-    "react-navigation": "^4.0.10",
+    "react-navigation": "^3.3.2",
     "react-navigation-stack": "^1.10.3"
   },
   "devDependencies": {

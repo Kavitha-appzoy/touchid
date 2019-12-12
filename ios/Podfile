@@ -11,8 +11,6 @@ target 'touchid_check' do
     inherit! :search_paths
     # Pods for testing
 
-    pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
-
     pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
 
   end
