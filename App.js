@@ -38,7 +38,7 @@ class App extends Component {
             color: '#fff',
             fontWeight: '600'
           }}>
-            {`Authenticate with ${this.state.biometryType}`}
+            {`Use FingerPrint`}
           </Text>
         </TouchableHighlight>
       </View>
@@ -52,7 +52,7 @@ class App extends Component {
         AlertIOS.alert('TouchID not supported');
       });
   }
-}
+ } 
 
 
 
