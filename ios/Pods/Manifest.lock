@@ -1,3 +1,25 @@
-PODFILE CHECKSUM: 4d7f21ccb0bba9c20ff6ba7f95300a1af2b564f2
+PODS:
+  - React (0.11.0):
+    - React/Core (= 0.11.0)
+  - React/Core (0.11.0)
+  - RNKeychain (4.0.4):
+    - React
+
+DEPENDENCIES:
+  - RNKeychain (from `../node_modules/react-native-keychain`)
+
+SPEC REPOS:
+  trunk:
+    - React
+
+EXTERNAL SOURCES:
+  RNKeychain:
+    :path: "../node_modules/react-native-keychain"
+
+SPEC CHECKSUMS:
+  React: ab1a2e21deb34965c38328d5ec40cc7d12c6050a
+  RNKeychain: 79cfca6cd5030bbabcd1a2c009531b84e358116d
+
+PODFILE CHECKSUM: 87f5de3542fe2e30f9b9f8dca2d8ae7e73583219
 
 COCOAPODS: 1.8.4

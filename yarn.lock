@@ -4860,6 +4860,16 @@ react-is@^16.8.1, react-is@^16.8.3, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
+react-native-keychain@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-keychain/-/react-native-keychain-4.0.4.tgz#099ce546d893fcc6503adf686507eb045584b7a6"
+  integrity sha512-FoxVpjaztOM9BLoZLourPDVhe7g2UoKogIvyiL0M4BMjQdX4uL8vutnJLDzRENAMdUlhmhkDPzTHi3/OjL8A+Q==
+
+react-native-touch-id@^4.4.1:
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/react-native-touch-id/-/react-native-touch-id-4.4.1.tgz#8b1bb2d04c30bac36bb9696d2d723e719c4a8b08"
+  integrity sha512-1jTl8fC+0fxvqegy/XXTyo6vMvPhjzkoDdaqoYZx0OH8AT250NuXnNPyKktvigIcys3+2acciqOeaCall7lrvg==
+
 react-native@0.59.9:
   version "0.59.9"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.59.9.tgz#c94ee4fa35121720c05235a2dd6cdd2784bf5177"

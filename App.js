@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import TouchID from "react-native-touch-id";
-
+import {storeCredential,retreiveCredential,removeCredential} from "./passwordStore";
 class App extends Component {
   constructor() {
     super()
@@ -18,7 +18,16 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
+ async componentDidMount() {
+  const userName = 'Lincy';
+  const passWord = 'geg34534';
+  await storeCredential(userName,passWord)
+  let credential = await retreiveCredential()
+   console.log("the crediential value is ",credential)
+  
+   await removeCredential()
+ 
+
     TouchID.isSupported()
     .then(biometryType => {
       this.setState({ biometryType });

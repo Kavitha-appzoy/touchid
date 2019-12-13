@@ -10,6 +10,8 @@ target 'touchid_check' do
   target 'touchid_check-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RNKeychain', :path => '../node_modules/react-native-keychain'
+
   end
 
   target 'touchid_checkTests' do
